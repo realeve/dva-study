@@ -1,5 +1,6 @@
 import dva from "dva";
 import "./index.css";
+import { browserHistory } from "dva/router";
 
 // 1. Initialize
 const options = {
@@ -14,7 +15,12 @@ const options = {
         id: 2
       }
     ]
-  }
+  },
+  onError(e, dispatch) {
+    console.log(e.message);
+    console.log(e.stack);
+  },
+  history: browserHistory
 };
 const app = dva(options);
 
