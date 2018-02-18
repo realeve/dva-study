@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 
 import { Table, Popconfirm, Button } from "antd";
 
+const R = require("ramda");
+
 const ProductList = ({ onDelete, products }) => {
   const columns = [
     {
@@ -23,6 +25,25 @@ const ProductList = ({ onDelete, products }) => {
 
   return <Table dataSource={products} columns={columns} />;
 };
+
+const data = [
+  {
+    age: 15,
+    name: "test"
+  },
+  {
+    age: 22,
+    name: "t2"
+  }
+];
+const changeName = R.map(R.assoc("name", "张三"));
+
+const dist = changeName(data);
+console.log(dist);
+
+const changeAge = R.map(R.evolve({ age: R.inc, name: R.always("ttt") }));
+
+console.log(changeAge(data));
 
 ProductList.propTypes = {
   onDelete: PropTypes.func.isRequired,
