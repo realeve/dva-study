@@ -1,12 +1,19 @@
 import React, { Component } from "react";
 import { connect } from "dva";
 
-import { Button, Radio, Icon } from "antd";
+import { Button, Radio, Icon, Row, Col } from "antd";
 import styles from "./Antd.less";
 
 class Antd extends Component {
   state = {
-    loading: true
+    loading: true,
+    style: {
+      col: {
+        height: 40,
+        backgroundColor: "rgba(0, 160, 233, 0.7)",
+        color: "#eee"
+      }
+    }
   };
   toggleLoading = () => {
     this.setState(prevState => ({
@@ -14,6 +21,7 @@ class Antd extends Component {
     }));
   };
   render() {
+    const style = this.state.style;
     return (
       <div className={styles.main}>
         <Button onClick={this.toggleLoading} className={styles.btn}>
@@ -51,6 +59,20 @@ class Antd extends Component {
             <Icon type="right" />
           </Button>
         </Button.Group>
+        <Row gutter={24} style={{ marginTop: 20 }}>
+          <Col span={6}>
+            <div style={style.col}> col-6 </div>
+          </Col>
+          <Col span={6}>
+            <div style={style.col}> col-6 </div>
+          </Col>
+          <Col span={6}>
+            <div style={style.col}> col-6 </div>
+          </Col>
+          <Col span={6}>
+            <div style={style.col}> col-6 </div>
+          </Col>
+        </Row>
       </div>
     );
   }

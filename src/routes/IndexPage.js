@@ -25,7 +25,10 @@ const IndexPage = ({ products, dispatch }) => {
           </a>
         </li>
         <li>
-          <a href="/#/products">点击这里</a>查看路由
+          <a href="/#/products">表格</a>查看路由
+        </li>
+        <li>
+          <a href="/#/antd">antd</a>
         </li>
       </ul>
       <ul className={styles.list}>
