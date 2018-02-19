@@ -19,16 +19,21 @@ const IndexPage = ({ products, dispatch }) => {
         <li>
           To get started, edit <code>src/index.js</code> and save to reload.
         </li>
+        {
+          // <li>
+          //   <a href="https://github.com/dvajs/dva-docs/blob/master/v1/en-us/getting-started.md">
+          //     Getting Started
+          //   </a>
+          // </li>
+        }
         <li>
-          <a href="https://github.com/dvajs/dva-docs/blob/master/v1/en-us/getting-started.md">
-            Getting Started
-          </a>
+          <a href="/products">表格</a>查看路由
         </li>
         <li>
-          <a href="/#/products">表格</a>查看路由
+          <a href="/antd">antd</a>
         </li>
         <li>
-          <a href="/#/antd">antd</a>
+          <a href="/menu">menu</a>
         </li>
       </ul>
       <ul className={styles.list}>

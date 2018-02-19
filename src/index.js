@@ -1,7 +1,9 @@
 import dva from "dva";
 import "./index.css";
-import { browserHistory } from "dva/router";
-
+// import {
+//   browserHistory
+// } from "dva/router";
+import browserHistory from "history/createBrowserHistory";
 // 1. Initialize
 const options = {
   initialState: {
@@ -20,7 +22,7 @@ const options = {
     console.log(e.message);
     console.log(e.stack);
   },
-  history: browserHistory
+  history: browserHistory()
 };
 const app = dva(options);
 
