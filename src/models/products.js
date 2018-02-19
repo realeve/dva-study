@@ -6,10 +6,7 @@ export default {
       return state.filter(item => item.id !== id);
     },
     add(state, { payload: name }) {
-      let max = state[0].id;
-      state.forEach(item => {
-        max = Math.max(item.id, max);
-      });
+      const max = state.reduce((prev, cur) => Math.max(prev, cur.id), 0);
       const item = { id: max + 1, name };
       console.log(item);
       return state.concat(item);
